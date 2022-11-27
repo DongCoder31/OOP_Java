@@ -91,21 +91,28 @@ public  class ManagerDocument
         System.out.println("Show All Employ List:");
         for (Document doc : documentList) {
             if (st.equalsIgnoreCase("book")) {
-                if (doc instanceof Book)
-                    doc.display();
+                if (doc instanceof Book) {
+                    Book book = (Book) doc;
+                    book.display();
+                }
             }
             else if (st.equalsIgnoreCase("magazine")) {
-                if (doc instanceof Magazine)
-                    doc.display();
+                if (doc instanceof Magazine){
+                    Magazine magazine = (Magazine) doc;
+                    magazine.display();
+                }
             }
             else if (st.equalsIgnoreCase("newspaper")) {
-                if (doc instanceof NewsPaper)
+                if (doc instanceof NewsPaper){
+                    NewsPaper newsPaper = (NewsPaper) doc;
                     doc.display();
+                }
             }else{
                 System.out.println("No data");
             }
         }
     }
+
 
     public void updateDocument(int n){
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
